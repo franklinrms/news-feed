@@ -3,6 +3,9 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import { chewie, inter } from '@/lib/fonts'
 import { siteConfig } from '@/config/site'
+import { ThemeProvider } from '@/components/theme/theme-provider'
+import { Header } from '@/components/header'
+import { cn } from '@/lib/utils'
 
 export const metadata: Metadata = {
   title: {
@@ -58,13 +61,16 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body
-        className={`${inter.variable} ${chewie.variable} font-body antialiased`}
+        className={cn('font-body antialiased', inter.variable, chewie.variable)}
       >
-        {/* <header className="bg-primary p-4 text-white">
-          <div className="container flex justify-between">
-            <h1 className="text-3xl font-bold">NewsFeed</h1>
-          </div>
-        </header> */}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+        </ThemeProvider>
         {children}
       </body>
     </html>
