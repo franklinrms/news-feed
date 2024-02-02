@@ -19,8 +19,8 @@ const config = {
     },
     extend: {
       fontFamily: {
-        body: ['var(--font-inter)', 'sans-serif'],
-        title: ['var(--font-chewie)', 'sans-serif'],
+        body: ['var(--font-mona-sans)', 'sans-serif'],
+        title: ['var(--font-source-serif)', 'serif'],
       },
       colors: {
         border: 'hsl(var(--border))',

@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 
 import './globals.css'
-import { chewie, inter } from '@/lib/fonts'
+import { monaSans, sourceSerif } from '@/lib/fonts'
 import { siteConfig } from '@/config/site'
 import { ThemeProvider } from '@/components/theme/theme-provider'
 import { Header } from '@/components/header'
@@ -61,7 +61,11 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body
-        className={cn('font-body antialiased', inter.variable, chewie.variable)}
+        className={cn(
+          'font-body antialiased',
+          monaSans.variable,
+          sourceSerif.variable,
+        )}
       >
         <ThemeProvider
           attribute="class"
