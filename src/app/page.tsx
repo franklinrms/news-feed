@@ -1,6 +1,5 @@
-import { NewsCard } from '@/components/news-card'
-import { Container } from '@/components/container'
 import { Grid } from '@/components/grid'
+import { News } from '@/components/news'
 
 import news from '../data.json'
 
@@ -9,13 +8,7 @@ export default function Home() {
     <main className="container min-h-screen w-full pb-80 pt-8">
       <Grid>
         {news.articles.map((item) => (
-          <Container key={item._id} className="break-inside-avoid">
-            <NewsCard
-              data={item}
-              showImage={Math.random() > 0.5}
-              showSummary={Math.random() > 0.5}
-            />
-          </Container>
+          <News key={item._id} data={item} />
         ))}
       </Grid>
     </main>
